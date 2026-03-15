@@ -13,9 +13,108 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Stylesheet -->
 <link rel="stylesheet" href="styles.css">
+<!-- Article Styles -->
+<style>
+.art-list-item {
+  display:block;
+  background:rgba(14,30,58,0.6);
+  border:1px solid rgba(56,189,248,0.15);
+  border-radius:16px;
+  padding:22px 26px;
+  transition:all 0.25s;
+  cursor:pointer;
+}
+.art-list-item:hover {
+  border-color:rgba(56,189,248,0.4);
+  background:rgba(56,189,248,0.07);
+  transform:translateX(6px);
+}
+.art-list-item .post-cat { display:inline-block; margin-bottom:8px; }
+.art-list-item h3 { font-size:1rem; font-weight:700; color:#e2e8f0; margin-bottom:6px; line-height:1.35; }
+.post-meta-sm { font-size:12px; color:#64748b; }
+
+.full-article { animation: fadeUp 0.4s ease; }
+.art-h {
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:800;
+  margin-bottom:16px;
+  line-height:1.15;
+  color:#e2e8f0;
+}
+.art-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:36px;
+  padding-bottom:24px;
+  border-bottom:1px solid rgba(56,189,248,0.15);
+}
+.art-body { font-size:1rem; line-height:1.9; color:#cbd5e1; }
+.art-body h3 {
+  font-size:1.25rem;
+  font-weight:800;
+  margin:36px 0 14px;
+  color:#e2e8f0;
+}
+.art-body p { margin-bottom:16px; }
+.art-body strong { color:#e2e8f0; }
+.art-body code {
+  background:rgba(56,189,248,0.1);
+  border:1px solid rgba(56,189,248,0.2);
+  padding:2px 8px;
+  border-radius:6px;
+  font-size:13px;
+  color:#38bdf8;
+  font-family:monospace;
+}
+.art-lead {
+  font-size:1.1rem;
+  font-weight:500;
+  color:#e2e8f0;
+  margin-bottom:28px;
+  padding:20px 24px;
+  background:rgba(56,189,248,0.06);
+  border-left:3px solid #38bdf8;
+  border-radius:0 12px 12px 0;
+}
+.art-box {
+  background:rgba(56,189,248,0.06);
+  border:1px solid rgba(56,189,248,0.2);
+  border-radius:16px;
+  padding:24px;
+  margin:28px 0;
+}
+.art-box h4 {
+  font-size:1rem;
+  font-weight:800;
+  color:#38bdf8;
+  margin-bottom:14px;
+}
+.art-list {
+  padding-left:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  color:#cbd5e1;
+  font-size:14px;
+}
+.art-list li { line-height:1.6; }
+.art-cta {
+  background:linear-gradient(135deg,rgba(56,189,248,0.1),rgba(129,140,248,0.06));
+  border:1px solid rgba(56,189,248,0.25);
+  border-radius:20px;
+  padding:32px;
+  margin-top:40px;
+  text-align:center;
+}
+.art-cta h4 { font-size:1.2rem; font-weight:800; margin-bottom:10px; color:#e2e8f0; }
+.art-cta p { color:#64748b; margin-bottom:20px; font-size:14px; }
+</style>
 </head>
 <body>
 
@@ -111,9 +210,7 @@
         </div>
         <h2>The Complete SEO Guide for Kanchipuram Businesses in 2025</h2>
         <p>If your Kanchipuram business isn't showing up on Google when local customers search for you, you're losing customers every single day to competitors. This complete guide reveals the exact SEO strategies we use to get our clients ranking on the first page — often within 60–90 days.</p>
-        <a href="post-seo-guide.html" class="btn-secondary" style="padding:12px 24px;font-size:14px">
-          Read Full Article →
-        </a>
+        <a href="#articles" onclick="showPost('post-seo')" class="btn-secondary" style="padding:12px 24px;font-size:14px">Read Full Article →</a>
       </div>
     </div>
 
@@ -134,7 +231,7 @@
           <h3>Google Ads vs Facebook Ads: Which Works Better for Tamil Nadu Businesses?</h3>
           <p>The million-rupee question every local business owner asks. We break down the real data from 20+ Tamil Nadu campaigns to help you choose the right platform.</p>
           <div class="post-card-footer">
-            <a href="post-ads-comparison.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-ads')" class="read-more">Read More →</a>
             <span class="post-time">1.8K reads</span>
           </div>
         </div>
@@ -154,7 +251,7 @@
           <h3>Google My Business: The Complete Setup Guide for Tamil Nadu Shops</h3>
           <p>Your free Google listing is your most powerful marketing tool. Here's how to fully optimize your GMB profile to appear in the coveted local 3-pack.</p>
           <div class="post-card-footer">
-            <a href="post-gmb-guide.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-gmb')" class="read-more">Read More →</a>
             <span class="post-time">2.1K reads</span>
           </div>
         </div>
@@ -174,7 +271,7 @@
           <h3>Instagram Marketing for Small Businesses in Tamil Nadu: 2025 Playbook</h3>
           <p>Tamil Nadu consumers are highly active on Instagram. Discover the content formats, posting schedule, and hashtag strategies that are driving real sales for local businesses.</p>
           <div class="post-card-footer">
-            <a href="post-instagram-guide.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-instagram')" class="read-more">Read More →</a>
             <span class="post-time">3.2K reads</span>
           </div>
         </div>
@@ -194,7 +291,7 @@
           <h3>5 Website Mistakes That Are Costing Kanchipuram Businesses Customers</h3>
           <p>Your website might be driving customers straight to your competitors. We've audited 100+ Tamil Nadu business websites and found these costly mistakes repeated again and again.</p>
           <div class="post-card-footer">
-            <a href="post-website-mistakes.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-website')" class="read-more">Read More →</a>
             <span class="post-time">2.7K reads</span>
           </div>
         </div>
@@ -214,7 +311,7 @@
           <h3>How Much Should a Kanchipuram Business Spend on Digital Marketing in 2025?</h3>
           <p>The honest answer every small business owner needs. We break down realistic budgets across SEO, ads and social media — and what ROI to realistically expect at each level.</p>
           <div class="post-card-footer">
-            <a href="post-budget-guide.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-budget')" class="read-more">Read More →</a>
             <span class="post-time">4.1K reads</span>
           </div>
         </div>
@@ -234,7 +331,7 @@
           <h3>How to Rank #1 on Google for "Near Me" Searches in Tamil Nadu</h3>
           <p>Local "near me" searches have exploded by 500% in Tamil Nadu over 3 years. Here's the exact strategy to capture this high-intent local traffic and turn it into walk-in customers.</p>
           <div class="post-card-footer">
-            <a href="post-near-me-seo.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-near-me')" class="read-more">Read More →</a>
             <span class="post-time">1.9K reads</span>
           </div>
         </div>
@@ -254,7 +351,7 @@
           <h3>How We Generated ₹2.1 Lakh Revenue for a Kanchipuram Silk Shop with ₹8K Ad Spend</h3>
           <p>A real case study with exact numbers. See the strategy, ad copies, keywords and landing page we used to achieve a 26x return on ad spend for a traditional silk saree business.</p>
           <div class="post-card-footer">
-            <a href="post-silk-case-study.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-silk')" class="read-more">Read More →</a>
             <span class="post-time">5.8K reads</span>
           </div>
         </div>
@@ -274,7 +371,7 @@
           <h3>Tamil vs English Content on Social Media: What Actually Works for Local Businesses?</h3>
           <p>We analyzed 500+ posts across 15 Tamil Nadu business accounts. The data clearly shows which language gets more engagement, shares and — most importantly — conversions.</p>
           <div class="post-card-footer">
-            <a href="post-tamil-vs-english.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-tamil')" class="read-more">Read More →</a>
             <span class="post-time">2.3K reads</span>
           </div>
         </div>
@@ -294,7 +391,7 @@
           <h3>The 7 Digital Marketing KPIs Every Tamil Nadu Business Owner Must Track</h3>
           <p>Most business owners track the wrong metrics and wonder why their marketing isn't working. These 7 numbers will tell you exactly how your digital marketing is performing.</p>
           <div class="post-card-footer">
-            <a href="post-kpi-guide.html" class="read-more">Read More →</a>
+            <a href="#articles" onclick="showPost('post-kpi')" class="read-more">Read More →</a>
             <span class="post-time">1.6K reads</span>
           </div>
         </div>
@@ -320,118 +417,528 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     BLOG ARTICLE — Full Content (Featured)
-     (Inline below for SEO — normally a separate page)
+     ALL BLOG ARTICLES
 ══════════════════════════════════════ -->
-<section style="background:var(--bg2);padding:80px 0">
-  <div class="con" style="max-width:780px">
-    <div class="rv">
-      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Featured Article</div>
-      <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;margin-bottom:16px;line-height:1.15">
-        The Complete SEO Guide for Kanchipuram Businesses in 2025
-      </h2>
-      <div class="post-meta" style="margin-bottom:28px;font-size:13px;gap:20px">
-        <span style="display:flex;align-items:center;gap:6px;color:var(--muted)">👤 Vijayaraghavan G.</span>
-        <span style="display:flex;align-items:center;gap:6px;color:var(--muted)">📅 March 15, 2025</span>
-        <span style="display:flex;align-items:center;gap:6px;color:var(--muted)">⏱ 8 min read</span>
-        <span style="display:flex;align-items:center;gap:6px;color:var(--muted)">🏷️ SEO · Kanchipuram</span>
+<section id="articles" style="background:var(--bg2);padding:80px 0">
+  <div class="con" style="max-width:820px">
+
+    <!-- Article Nav -->
+    <div id="article-nav" style="display:none;margin-bottom:40px">
+      <a href="#blog-posts" onclick="closePost()" style="display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.08);border:1px solid var(--brd2);color:var(--cyan);padding:10px 20px;border-radius:50px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s">← Back to All Articles</a>
+    </div>
+
+    <!-- Default state: list of article links -->
+    <div id="article-list">
+      <div style="text-align:center;margin-bottom:48px">
+        <div class="label" style="margin-bottom:14px"><span class="label-dot"></span>Full Articles</div>
+        <h2 class="sh">All Blog Posts <span class="grad-text">In Full</span></h2>
+        <p class="sp" style="margin:12px auto 0">Click any article below to read the complete post.</p>
       </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <a href="#articles" onclick="showPost('post-seo')" class="art-list-item">
+          <span class="post-cat">SEO</span>
+          <h3>The Complete SEO Guide for Kanchipuram Businesses in 2025</h3>
+          <span class="post-meta-sm">📅 March 2025 &nbsp;·&nbsp; ⏱ 8 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-ads')" class="art-list-item">
+          <span class="post-cat">Google Ads</span>
+          <h3>Google Ads vs Facebook Ads: Which Works Better for Tamil Nadu Businesses?</h3>
+          <span class="post-meta-sm">📅 Feb 2025 &nbsp;·&nbsp; ⏱ 6 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-gmb')" class="art-list-item">
+          <span class="post-cat">Local Marketing</span>
+          <h3>Google My Business: The Complete Setup Guide for Tamil Nadu Shops</h3>
+          <span class="post-meta-sm">📅 Feb 2025 &nbsp;·&nbsp; ⏱ 5 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-instagram')" class="art-list-item">
+          <span class="post-cat">Social Media</span>
+          <h3>Instagram Marketing for Small Businesses in Tamil Nadu: 2025 Playbook</h3>
+          <span class="post-meta-sm">📅 Jan 2025 &nbsp;·&nbsp; ⏱ 7 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-website')" class="art-list-item">
+          <span class="post-cat">Website Design</span>
+          <h3>5 Website Mistakes That Are Costing Kanchipuram Businesses Customers</h3>
+          <span class="post-meta-sm">📅 Jan 2025 &nbsp;·&nbsp; ⏱ 5 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-budget')" class="art-list-item">
+          <span class="post-cat">Business Guide</span>
+          <h3>How Much Should a Kanchipuram Business Spend on Digital Marketing in 2025?</h3>
+          <span class="post-meta-sm">📅 Dec 2024 &nbsp;·&nbsp; ⏱ 9 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-near-me')" class="art-list-item">
+          <span class="post-cat">SEO</span>
+          <h3>How to Rank #1 on Google for "Near Me" Searches in Tamil Nadu</h3>
+          <span class="post-meta-sm">📅 Dec 2024 &nbsp;·&nbsp; ⏱ 6 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-silk')" class="art-list-item">
+          <span class="post-cat">Google Ads</span>
+          <h3>How We Generated ₹2.1 Lakh Revenue for a Kanchipuram Silk Shop with ₹8K Ad Spend</h3>
+          <span class="post-meta-sm">📅 Nov 2024 &nbsp;·&nbsp; ⏱ 7 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-tamil')" class="art-list-item">
+          <span class="post-cat">Social Media</span>
+          <h3>Tamil vs English Content on Social Media: What Actually Works for Local Businesses?</h3>
+          <span class="post-meta-sm">📅 Nov 2024 &nbsp;·&nbsp; ⏱ 5 min read</span>
+        </a>
+        <a href="#articles" onclick="showPost('post-kpi')" class="art-list-item">
+          <span class="post-cat">Business Guide</span>
+          <h3>The 7 Digital Marketing KPIs Every Tamil Nadu Business Owner Must Track</h3>
+          <span class="post-meta-sm">📅 Oct 2024 &nbsp;·&nbsp; ⏱ 8 min read</span>
+        </a>
+      </div>
+    </div>
 
-      <!-- Article Content -->
-      <div style="font-size:1rem;line-height:1.9;color:var(--text2)">
+    <!-- ═══ ARTICLE: SEO GUIDE ═══ -->
+    <article id="post-seo" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>SEO</div>
+      <h2 class="art-h">The Complete SEO Guide for Kanchipuram Businesses in 2025</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 March 15, 2025</span><span>⏱ 8 min read</span><span>🏷️ SEO · Kanchipuram</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">If your Kanchipuram business isn't showing up on Google's first page, your competitors are capturing those customers — every single day. This guide shows you exactly how to fix that.</p>
 
-        <p style="font-size:1.1rem;font-weight:500;color:var(--text);margin-bottom:24px">
-          If your Kanchipuram business isn't showing up on Google's first page, your competitors are capturing those customers — every single day. This guide will show you exactly how to fix that.
-        </p>
+        <h3>Why SEO Matters More Than Ever for Kanchipuram Businesses</h3>
+        <p>According to Google's local search data, <strong>76% of people who search for a local business visit that business within 24 hours.</strong> When someone searches "best silk saree shop near me" or "dental clinic kanchipuram," they are ready to buy. The businesses on page one get those customers. Everyone else gets nothing.</p>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Why SEO Matters More Than Ever for Kanchipuram Businesses</h3>
-        <p>According to Google's local search data, <strong style="color:var(--cyan)">76% of people who search for a local business on their smartphone visit that business within 24 hours</strong>. In Kanchipuram, a city famous for silk sarees and temples, local search is exploding — especially on mobile.</p>
-        <p style="margin-top:14px">Think about this: when someone in Kanchipuram searches "best silk saree shop near me" or "dental clinic kanchipuram," they're ready to buy or book. The businesses that appear on the first page get those customers. The ones on page 2 and beyond get nothing.</p>
-
-        <div style="background:rgba(56,189,248,0.06);border:1px solid var(--brd2);border-radius:16px;padding:24px;margin:28px 0">
-          <h4 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:12px;color:var(--cyan)">📊 Key Local SEO Stats for Tamil Nadu</h4>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span>92% of online experiences begin with a search engine</li>
-            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span>"Near me" searches in Tamil Nadu grew 450% in 3 years</li>
-            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span>Businesses in the Google Maps "3-pack" get 44% of all clicks</li>
-            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span>86% of consumers use Google Maps to find local businesses</li>
+        <div class="art-box">
+          <h4>📊 Key Local SEO Stats for Tamil Nadu</h4>
+          <ul class="art-list">
+            <li>92% of online experiences begin with a search engine</li>
+            <li>"Near me" searches in Tamil Nadu grew 450% in 3 years</li>
+            <li>Businesses in the Google Maps 3-pack get 44% of all clicks</li>
+            <li>86% of consumers use Google Maps to find local businesses</li>
           </ul>
         </div>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Step 1: Claim & Fully Optimize Your Google Business Profile</h3>
-        <p>Your Google Business Profile (formerly Google My Business) is the single most impactful free SEO tool available. Yet most Kanchipuram businesses leave it incomplete or never claim it at all.</p>
-        <p style="margin-top:14px">Here's what a fully optimized profile looks like:</p>
-        <ul style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>Complete business name, address, phone number (NAP consistency is crucial)</li>
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>20+ high-quality photos of your business, products, and team</li>
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>Business description with your target keywords (Tamil + English)</li>
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>Accurate business hours (mark holiday hours too)</li>
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>Regular Google Posts (at least 2 per week) to show activity</li>
-          <li style="display:flex;align-items:flex-start;gap:10px"><span style="background:rgba(56,189,248,0.1);border:1px solid var(--brd2);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--cyan);flex-shrink:0">✓</span>Respond to every review within 24 hours (builds trust with Google)</li>
+        <h3>Step 1: Claim & Optimize Your Google Business Profile</h3>
+        <p>Your Google Business Profile is the single most impactful free SEO tool available. Yet most Kanchipuram businesses leave it incomplete. A fully optimized profile includes: complete NAP (name, address, phone), 20+ high-quality photos, a keyword-rich description in Tamil and English, accurate hours, regular Google Posts (at least 2/week), and responses to every review within 24 hours.</p>
+
+        <h3>Step 2: Target the Right Local Keywords</h3>
+        <p>Focus on local commercial intent keywords — phrases people search when they're ready to buy. High priority: "silk saree shop kanchipuram," "best dentist kanchipuram." Medium priority: "digital marketing company kanchipuram," "catering kanchipuram." Informational: "how to buy silk saree," "kanchipuram silk vs banarasi." Use these terms naturally in your page titles, headings, and body content.</p>
+
+        <h3>Step 3: On-Page SEO — The Foundation</h3>
+        <p>Every page on your website needs: a title tag with your keyword + city (e.g. "Best Silk Sarees in Kanchipuram | Your Shop"), a 150-160 character meta description with a call to action, a single H1 heading with your primary keyword, clean URLs like <code>/silk-sarees-kanchipuram/</code>, and at least 800 words of original helpful content per service page.</p>
+
+        <h3>Step 4: Build Local Citations</h3>
+        <p>Citations are mentions of your business NAP across the web. List your business consistently on Justdial, Sulekha, IndiaMART, Yellow Pages India, Bing Places, Apple Maps Connect, and Facebook Business. Inconsistent NAP across directories confuses Google and hurts rankings.</p>
+
+        <h3>Step 5: Get More Google Reviews</h3>
+        <p>Reviews are the single most powerful local ranking factor. Implement this system: send every satisfied customer a WhatsApp message 2 days after their visit with a direct review link. Train staff to ask verbally. Add a QR code on receipts. Respond to every review — good and bad — within 24 hours.</p>
+
+        <div class="art-cta">
+          <h4>Want Us to Do This for Your Business?</h4>
+          <p>We implement all 5 SEO steps for every client within the first 30 days. Book a free consultation to see how we can grow your Kanchipuram business.</p>
+          <a href="https://wa.me/919585684616?text=I read the SEO guide and want a free consultation" class="btn-primary" target="_blank" rel="noopener">🚀 Book Free Consultation →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: GOOGLE ADS VS FACEBOOK ADS ═══ -->
+    <article id="post-ads" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Google Ads</div>
+      <h2 class="art-h">Google Ads vs Facebook Ads: Which Works Better for Tamil Nadu Businesses?</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Feb 2025</span><span>⏱ 6 min read</span><span>🏷️ Paid Ads</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">The million-rupee question every Tamil Nadu business owner asks. After running 20+ campaigns for local businesses, here is the honest data-driven answer.</p>
+
+        <h3>How Google Ads Work</h3>
+        <p>Google Ads (Pay-Per-Click) shows your business to people who are <strong>actively searching</strong> for what you offer right now. Someone types "silk saree shop kanchipuram" and your ad appears at the top of results. This is called pull marketing — you capture intent that already exists.</p>
+
+        <h3>How Facebook Ads Work</h3>
+        <p>Facebook and Instagram Ads show your business to people based on their demographics, interests, and behaviors — <strong>before they know they need you</strong>. This is push marketing — you interrupt someone's scroll and create awareness. It works brilliantly for visual products and brand building.</p>
+
+        <div class="art-box">
+          <h4>📊 Our Tamil Nadu Data: 20+ Campaigns Compared</h4>
+          <ul class="art-list">
+            <li><strong>Google Ads average conversion rate:</strong> 4.2% for local service businesses</li>
+            <li><strong>Facebook Ads average conversion rate:</strong> 1.8% for the same businesses</li>
+            <li><strong>Google Ads average CPC in Tamil Nadu:</strong> ₹18–₹45 depending on industry</li>
+            <li><strong>Facebook Ads average CPM:</strong> ₹80–₹160 per 1,000 impressions</li>
+            <li><strong>Google Ads average ROI:</strong> 3.2x across our client campaigns</li>
+            <li><strong>Facebook Ads average ROI:</strong> 2.1x across our client campaigns</li>
+          </ul>
+        </div>
+
+        <h3>When to Choose Google Ads</h3>
+        <p>Choose Google Ads when you offer a service people actively search for — clinics, repair services, lawyers, accountants, catering. When someone needs a dentist, they Google it. Google Ads puts you right there at the moment of highest intent. Best for immediate lead generation with a limited budget.</p>
+
+        <h3>When to Choose Facebook/Instagram Ads</h3>
+        <p>Choose Facebook Ads for visually driven products (silk sarees, jewellery, food, clothing), brand awareness campaigns, retargeting website visitors, and reaching specific demographics (e.g. women aged 25-45 in Kanchipuram interested in fashion). Excellent for building a long-term audience.</p>
+
+        <h3>The Winning Answer for Most Tamil Nadu Businesses</h3>
+        <p>Run both — but start with Google Ads if your budget is under ₹15,000/month. Google Ads delivers faster, more measurable ROI for most local service businesses. Once you have a steady flow of leads from Google, layer in Facebook/Instagram Ads for brand building and retargeting the people who visited your website but didn't convert.</p>
+
+        <div class="art-cta">
+          <h4>Not Sure Which Platform is Right for You?</h4>
+          <p>Book a free strategy call. We'll analyze your business, your competition, and recommend the exact mix for your budget and goals.</p>
+          <a href="https://wa.me/919585684616?text=I want to know which ads platform is right for my business" class="btn-primary" target="_blank" rel="noopener">🚀 Get Free Platform Advice →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: GOOGLE MY BUSINESS ═══ -->
+    <article id="post-gmb" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Local Marketing</div>
+      <h2 class="art-h">Google My Business: The Complete Setup Guide for Tamil Nadu Shops</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Feb 2025</span><span>⏱ 5 min read</span><span>🏷️ Local SEO</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">Your free Google Business Profile is your most powerful marketing tool. Most Tamil Nadu shop owners either haven't claimed it or have left it half-complete — and are losing customers because of it every single day.</p>
+
+        <h3>Step 1: Claim Your Profile</h3>
+        <p>Go to <strong>business.google.com</strong> and search for your business. If it already exists (Google often auto-generates listings), click "Claim this business." If not, click "Add your business." You'll verify ownership via postcard, phone, or video — usually takes 5–7 days.</p>
+
+        <h3>Step 2: Complete Every Section</h3>
+        <p>Most businesses fill in only 40% of their profile. Complete all sections: business name (use your exact legal name — no keyword stuffing), address, phone number, website, business category (choose the most specific one), service areas if you deliver, business hours including holidays, and a detailed description (750 characters) weaving in your top 3 keywords naturally.</p>
+
+        <h3>Step 3: Upload 20+ High-Quality Photos</h3>
+        <p>Businesses with 20+ photos get 35% more website clicks and 42% more requests for directions. Upload: storefront exterior (from the road, so customers can find you), interior, your products or services in action, your team, and any awards or certifications. Update photos monthly — Google rewards active profiles.</p>
+
+        <div class="art-box">
+          <h4>📌 The 3-Pack Secret</h4>
+          <p style="color:var(--text2);font-size:14px;line-height:1.7">The "3-Pack" is the box of 3 local businesses Google shows at the top of local searches. It gets 44% of all clicks. To appear there: 1) Complete your profile fully. 2) Get 10+ Google reviews above 4.0 stars. 3) Have consistent NAP across the web. 4) Post on your profile weekly.</p>
+        </div>
+
+        <h3>Step 4: Get Reviews Systematically</h3>
+        <p>Generate a short review link from your Google Business Profile dashboard (Share → Copy link). Send it to every happy customer via WhatsApp: "Hi [Name], thank you for visiting! If you're happy with our service, a quick Google review would really help us. It takes only 30 seconds: [link]" — this simple message gets a 30-40% response rate.</p>
+
+        <h3>Step 5: Post Weekly Google Updates</h3>
+        <p>Go to your profile and click "Add update." Post about offers, new products, events, or helpful tips. These posts appear in your profile for 7 days and signal to Google that your business is active. Active profiles consistently outrank inactive ones even when other factors are equal.</p>
+
+        <div class="art-cta">
+          <h4>Want Us to Fully Optimize Your Google Profile?</h4>
+          <p>We set up and optimize Google Business Profiles for Tamil Nadu businesses as part of our Local SEO service. Results typically appear within 30–60 days.</p>
+          <a href="https://wa.me/919585684616?text=I want to optimize my Google Business Profile" class="btn-primary" target="_blank" rel="noopener">🚀 Optimize My Profile →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: INSTAGRAM ═══ -->
+    <article id="post-instagram" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Social Media</div>
+      <h2 class="art-h">Instagram Marketing for Small Businesses in Tamil Nadu: 2025 Playbook</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Jan 2025</span><span>⏱ 7 min read</span><span>🏷️ Instagram · Social Media</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">Tamil Nadu has one of India's most engaged Instagram user bases. For visual businesses — sarees, food, jewellery, salons — Instagram is a direct sales channel. Here's the playbook that's working in 2025.</p>
+
+        <h3>Optimize Your Instagram Business Profile</h3>
+        <p>Your bio has 150 characters. Use them wisely: what you do, who you serve, and a call-to-action with a link. Example: "Premium Kanchipuram Silk Sarees 🪡 | Shipped across India | DM to order | ⬇️ Shop now." Switch to a Business Account (free) to access analytics and the "Contact" button. Use a clear logo or product photo as your profile picture.</p>
+
+        <h3>Content Formats That Work in Tamil Nadu</h3>
+        <p><strong>Reels (70% of your content):</strong> Short 15-30 second videos showing products, behind-the-scenes, before-and-after, or quick tips. Reels get 3x more reach than photos. <strong>Carousel posts (20%):</strong> Multiple images work great for showcasing product collections, before/after transformations, and step-by-step guides. <strong>Stories (daily):</strong> Poll questions, "which do you prefer," countdown timers for sales, and customer testimonials.</p>
+
+        <div class="art-box">
+          <h4>🗓️ Winning Posting Schedule for Tamil Nadu Businesses</h4>
+          <ul class="art-list">
+            <li><strong>Monday:</strong> Educational tip or myth-busting post</li>
+            <li><strong>Wednesday:</strong> Product showcase Reel or Carousel</li>
+            <li><strong>Friday:</strong> Customer testimonial or transformation</li>
+            <li><strong>Saturday:</strong> Behind-the-scenes or "meet the team"</li>
+            <li><strong>Daily Stories:</strong> Polls, questions, product previews</li>
+          </ul>
+        </div>
+
+        <h3>Hashtag Strategy for Tamil Nadu</h3>
+        <p>Use a mix of 15-20 hashtags per post across three tiers. Big (1M+ posts): #silk #sarees #indian fashion. Medium (50K-500K): #kanchipuramsaree #tamilnadubusiness. Small/local (under 10K): #kanchipuramshopping #chengalpattusilk. The small local hashtags have less competition and often drive the most targeted local traffic.</p>
+
+        <h3>Tamil Content Outperforms English 3:1</h3>
+        <p>In our analysis of 500+ posts across Tamil Nadu business accounts, Tamil captions consistently get 3x more comments and saves than English captions for the same product. Tamil audiences feel more connected to brands that speak their language. You don't need to choose — post in both. Tamil caption first, English translation below.</p>
+
+        <h3>How to Convert Followers into Customers</h3>
+        <p>Post → DM → WhatsApp is the conversion funnel for Instagram. Every post should have a CTA: "DM us to order," "Comment your size," "Send 'PRICE' to get the catalog." Respond to every DM within 1 hour — Instagram's algorithm rewards fast response rates and so do customers.</p>
+
+        <div class="art-cta">
+          <h4>Want a Managed Instagram Strategy for Your Business?</h4>
+          <p>We create and manage Instagram content for Tamil Nadu businesses — in Tamil and English. Full calendar, content creation, posting, and performance reports.</p>
+          <a href="https://wa.me/919585684616?text=I want Instagram marketing for my business" class="btn-primary" target="_blank" rel="noopener">🚀 Start Instagram Marketing →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: WEBSITE MISTAKES ═══ -->
+    <article id="post-website" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Website Design</div>
+      <h2 class="art-h">5 Website Mistakes That Are Costing Kanchipuram Businesses Customers</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Jan 2025</span><span>⏱ 5 min read</span><span>🏷️ Website · Conversion</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">We've audited over 100 Tamil Nadu business websites. The same costly mistakes appear again and again — and they're silently driving customers to your competitors. Fix these and watch your enquiries grow.</p>
+
+        <h3>Mistake #1: No Mobile Optimization</h3>
+        <p>Over 78% of local searches in Tamil Nadu happen on mobile phones. If your website looks broken, loads slowly, or is hard to navigate on a phone, visitors leave within 8 seconds — and they don't come back. Google also ranks mobile-friendly websites higher. Test yours at <strong>search.google.com/test/mobile-friendly</strong>. If it fails, this is your #1 priority.</p>
+
+        <h3>Mistake #2: No Clear Call-to-Action Above the Fold</h3>
+        <p>"Above the fold" means what visitors see without scrolling. Most business websites we audit have beautiful banners but no clear CTA. Every page must have one primary call-to-action visible immediately: "Call Now," "WhatsApp Us," "Book Free Consultation," or "Get a Quote." Make it a large button in a contrasting color. Don't make visitors hunt for how to contact you.</p>
+
+        <h3>Mistake #3: Slow Loading Speed</h3>
+        <p>Google research shows 53% of mobile users abandon a site that takes more than 3 seconds to load. Most Tamil Nadu business websites load in 8-12 seconds. The main culprits: uncompressed images (compress all images to under 200KB using TinyPNG), cheap shared hosting, too many plugins (WordPress sites), and no browser caching. Check your speed at <strong>pagespeed.web.dev</strong>.</p>
+
+        <div class="art-box">
+          <h4>⚡ Quick Speed Fixes</h4>
+          <ul class="art-list">
+            <li>Compress all images before uploading — aim for under 150KB each</li>
+            <li>Use a fast hosting provider (we recommend Hostinger or SiteGround)</li>
+            <li>Enable browser caching via your hosting control panel</li>
+            <li>Remove unnecessary plugins or scripts</li>
+            <li>Use a Content Delivery Network (CDN) like Cloudflare (free)</li>
+          </ul>
+        </div>
+
+        <h3>Mistake #4: Missing Trust Signals</h3>
+        <p>Tamil Nadu customers need to trust you before they contact you. Most websites are missing: customer testimonials with real names and photos, Google review widget showing your rating, WhatsApp button (this alone can increase enquiries by 40%), your physical address and business hours, and team photos. These signals say "we are a real, trustworthy business."</p>
+
+        <h3>Mistake #5: No SEO Foundation</h3>
+        <p>A beautiful website that Google can't find is useless. Every page needs a unique title tag (60 characters max) with your keyword + city, a meta description (160 characters) that compels clicks, at least one H1 heading with your primary keyword, and original content — not copy-pasted from competitors. Even adding these basics to an existing website can improve rankings within 30-60 days.</p>
+
+        <div class="art-cta">
+          <h4>How Does Your Website Score?</h4>
+          <p>Get a free website audit from Digi Vijay. We'll identify exactly which of these mistakes are hurting your business and give you an action plan to fix them.</p>
+          <a href="https://wa.me/919585684616?text=I want a free website audit" class="btn-primary" target="_blank" rel="noopener">🚀 Get Free Website Audit →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: BUDGET GUIDE ═══ -->
+    <article id="post-budget" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Business Guide</div>
+      <h2 class="art-h">How Much Should a Kanchipuram Business Spend on Digital Marketing in 2025?</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Dec 2024</span><span>⏱ 9 min read</span><span>🏷️ Budget · Strategy</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">The honest answer: it depends on your goals. But "it depends" isn't useful. Here's a practical breakdown of realistic digital marketing budgets for Kanchipuram businesses at every stage — and what ROI to expect at each level.</p>
+
+        <h3>The General Rule</h3>
+        <p>Most marketing experts recommend spending 5-15% of your revenue on marketing. For a new business trying to grow fast, aim for 10-15%. For an established business maintaining its position, 5-8% is fine. In rupee terms, a business earning ₹5L/month should spend ₹25,000–₹75,000/month on all marketing combined.</p>
+
+        <div class="art-box">
+          <h4>💰 Budget Tiers for Kanchipuram Businesses</h4>
+          <ul class="art-list">
+            <li><strong>Starter (₹5,000–₹10,000/month):</strong> Google Business Profile optimization + basic SEO. Realistic results: improved local rankings in 60-90 days, 5-15 extra enquiries/month.</li>
+            <li><strong>Growth (₹10,000–₹25,000/month):</strong> SEO + Google Ads (₹8K ad spend). Realistic results: first-page rankings, 20-40 leads/month, 2-3x ROI on ad spend.</li>
+            <li><strong>Scale (₹25,000–₹50,000/month):</strong> Full SEO + Google Ads + Social Media. Realistic results: dominant local presence, 50-100+ leads/month, brand recognition across Tamil Nadu.</li>
+            <li><strong>Dominate (₹50,000+/month):</strong> All of the above + content marketing + video + retargeting. Results: market leader status in your category.</li>
+          </ul>
+        </div>
+
+        <h3>What to Spend First (Priority Order)</h3>
+        <p><strong>1st: Google Business Profile</strong> — free to claim, takes 2 hours to optimize, delivers results for years. <strong>2nd: Basic website SEO</strong> — title tags, meta descriptions, speed fixes. Often a one-time ₹3,000–₹5,000 investment. <strong>3rd: Google Ads</strong> — immediate results. Start with ₹5,000/month ad spend. <strong>4th: Social Media</strong> — great for brand building once leads are flowing.</p>
+
+        <h3>ROI Expectations by Channel</h3>
+        <p>Based on our Tamil Nadu client data: <strong>Local SEO</strong> delivers an average 8x ROI over 12 months (slow start, compounds over time). <strong>Google Ads</strong> deliver an average 3.2x ROI from month one (immediate, but stops when you stop spending). <strong>Social Media</strong> delivers 2.1x direct ROI but creates brand value that compounds. <strong>Email/WhatsApp Marketing</strong> to existing customers has the highest ROI: often 10-15x for retail businesses.</p>
+
+        <h3>Common Budget Mistakes to Avoid</h3>
+        <p>Spreading too thin: ₹5,000 across 5 channels means ₹1,000 each — not enough to show results on any. Concentrate your budget. Stopping too early: SEO takes 3-6 months. Most businesses quit after 45 days and miss the results. Ignoring tracking: if you don't know which channel generates leads, you can't optimize. Set up Google Analytics and call tracking from day one.</p>
+
+        <div class="art-cta">
+          <h4>Get a Custom Budget Plan for Your Business</h4>
+          <p>Not sure how to allocate your marketing budget? Book a free strategy call. We'll build a custom plan based on your industry, competition, and goals — with no obligation.</p>
+          <a href="https://wa.me/919585684616?text=I want a custom digital marketing budget plan" class="btn-primary" target="_blank" rel="noopener">🚀 Get My Free Plan →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: NEAR ME SEO ═══ -->
+    <article id="post-near-me" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>SEO</div>
+      <h2 class="art-h">How to Rank #1 on Google for "Near Me" Searches in Tamil Nadu</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Dec 2024</span><span>⏱ 6 min read</span><span>🏷️ Local SEO · Near Me</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">Local "near me" searches have grown by 500% in Tamil Nadu over 3 years. These are high-intent searches — people ready to visit or buy. Here's the exact strategy to capture them.</p>
+
+        <h3>How Google Decides Who Ranks in "Near Me" Results</h3>
+        <p>Google uses three factors for local rankings: <strong>Relevance</strong> (does your business match what they searched for?), <strong>Distance</strong> (how close is your business to the searcher?), and <strong>Prominence</strong> (how well-known and trusted is your business online?). You can't control distance, but you can significantly improve relevance and prominence.</p>
+
+        <h3>Optimize for Relevance</h3>
+        <p>Choose the most accurate primary category in your Google Business Profile. Add all secondary categories that apply. Write your business description with your service keywords naturally included. Add every service you offer in the "Services" section. These signals tell Google exactly what you do.</p>
+
+        <div class="art-box">
+          <h4>🎯 Near Me Ranking Checklist</h4>
+          <ul class="art-list">
+            <li>✅ Google Business Profile 100% complete</li>
+            <li>✅ 10+ Google reviews, average above 4.2 stars</li>
+            <li>✅ Consistent NAP on 10+ directories</li>
+            <li>✅ "Near me" keywords in website content</li>
+            <li>✅ Weekly Google Posts activity</li>
+            <li>✅ Photos updated in last 30 days</li>
+            <li>✅ Questions answered in the Q&A section</li>
+            <li>✅ Website loads under 3 seconds on mobile</li>
+          </ul>
+        </div>
+
+        <h3>Build Prominence with Reviews</h3>
+        <p>The businesses ranking in the near me 3-pack in Kanchipuram typically have 25-80 Google reviews. Start a review generation campaign: create a WhatsApp Business automated message that sends to every customer 48 hours after purchase. Include your direct review link. With this system, our clients average 8-12 new reviews per month.</p>
+
+        <h3>Add "Near Me" Keywords to Your Website</h3>
+        <p>Create a dedicated page titled "[Your Service] in Kanchipuram | Near Me." Include phrases like "Located in the heart of Kanchipuram," "Serving customers near [landmark]," and "[Service] near Kanchipuram bus stand." Add an embedded Google Map to your contact page — this directly helps near me rankings.</p>
+
+        <h3>Build Local Citations Fast</h3>
+        <p>Submit your business to the top 10 Tamil Nadu directories in one day: Justdial, Sulekha, IndiaMART, TradeIndia, Yellow Pages, Bing Places, Apple Maps, TripAdvisor (if relevant), Facebook, and LinkedIn. Use exactly the same business name, address, and phone number on every listing. This consistency is critical.</p>
+
+        <div class="art-cta">
+          <h4>Want to Rank #1 in Your Area?</h4>
+          <p>We specialize in local SEO for Kanchipuram and Tamil Nadu businesses. Most clients appear in the top 3 local results within 60-90 days of starting our Local SEO service.</p>
+          <a href="https://wa.me/919585684616?text=I want to rank #1 for near me searches in my area" class="btn-primary" target="_blank" rel="noopener">🚀 Start Local SEO →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: SILK SHOP CASE STUDY ═══ -->
+    <article id="post-silk" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Google Ads Case Study</div>
+      <h2 class="art-h">How We Generated ₹2.1 Lakh Revenue for a Kanchipuram Silk Shop with ₹8K Ad Spend</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Nov 2024</span><span>⏱ 7 min read</span><span>🏷️ Case Study · Google Ads</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">Real numbers, real strategy. This is the exact campaign breakdown for a traditional Kanchipuram silk saree shop — from zero online presence to ₹2.1 lakh in attributed revenue in 45 days with just ₹8,000 in ad spend.</p>
+
+        <h3>The Client: Rajan Silk House, Kanchipuram</h3>
+        <p>A 3rd-generation family silk saree business with a physical store in Kanchipuram. Zero online presence — no website, no Google Business Profile, no social media. Revenue was entirely walk-in. The challenge: the pandemic had reduced tourist footfall dramatically. They needed to reach customers outside Kanchipuram.</p>
+
+        <h3>Month 1: Foundation Setup (Week 1-2)</h3>
+        <p>Before spending a single rupee on ads: we claimed and optimized the Google Business Profile, built a 5-page conversion-focused website in 7 days, added 40 product photos, set up Google Analytics and conversion tracking, and created a WhatsApp Business catalog. This foundation work is what makes ads profitable.</p>
+
+        <div class="art-box">
+          <h4>📊 Campaign Numbers (45 Days)</h4>
+          <ul class="art-list">
+            <li><strong>Total ad spend:</strong> ₹8,000</li>
+            <li><strong>Total clicks:</strong> 1,247</li>
+            <li><strong>Average CPC:</strong> ₹6.41</li>
+            <li><strong>WhatsApp enquiries generated:</strong> 89</li>
+            <li><strong>Orders confirmed:</strong> 23</li>
+            <li><strong>Average order value:</strong> ₹9,100</li>
+            <li><strong>Total revenue:</strong> ₹2,09,300</li>
+            <li><strong>Return on Ad Spend (ROAS):</strong> 26.2x</li>
+          </ul>
+        </div>
+
+        <h3>The Keywords We Targeted</h3>
+        <p>We focused on high-intent, specific keywords rather than broad ones: "kanchipuram silk saree buy online," "authentic kanchipuram pattu saree," "kanchipuram silk saree for wedding," "kanchipuram saree price," and "pure silk saree kanchipuram." These had lower competition and higher buyer intent than broad terms like "saree" or "silk saree."</p>
+
+        <h3>The Ad Copy That Worked</h3>
+        <p>Headline 1: "Authentic Kanchipuram Silk Sarees" | Headline 2: "Direct from Weaver Family — Since 1952" | Headline 3: "WhatsApp for Price & Catalog" | Description: "Genuine GI-certified Kanchipuram Pattu. 500+ designs. Wedding, festival & daily wear. Free shipping India. Chat on WhatsApp to see full catalog." The trust signals (since 1952, GI certified, family) made the difference.</p>
+
+        <h3>The Landing Page Formula</h3>
+        <p>The ad linked to a dedicated page (not the homepage) with: a product gallery above the fold, price range displayed prominently, a WhatsApp button as the primary CTA, 5 customer testimonials with saree photos, shipping info, and a trust badge for GI certification. No distractions, one clear action: WhatsApp us.</p>
+
+        <div class="art-cta">
+          <h4>Want Similar Results for Your Business?</h4>
+          <p>This exact framework works for any product-based Tamil Nadu business. Book a free strategy call to see if your business is a good fit.</p>
+          <a href="https://wa.me/919585684616?text=I want to discuss a Google Ads campaign for my business like the silk shop case study" class="btn-primary" target="_blank" rel="noopener">🚀 Discuss My Campaign →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: TAMIL VS ENGLISH ═══ -->
+    <article id="post-tamil" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Social Media</div>
+      <h2 class="art-h">Tamil vs English Content on Social Media: What Actually Works for Local Businesses?</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Nov 2024</span><span>⏱ 5 min read</span><span>🏷️ Tamil Content · Social Media</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">We analyzed 500+ posts across 15 Tamil Nadu business accounts. The data is clear — and it may surprise you. Here's what actually drives engagement, shares, and most importantly, sales.</p>
+
+        <h3>The Data: Tamil Content Dominates</h3>
+        <p>Across our analysis of 15 Tamil Nadu business Instagram and Facebook accounts over 6 months:</p>
+        <ul style="margin:14px 0 14px 20px;display:flex;flex-direction:column;gap:8px;color:var(--text2);font-size:14px">
+          <li>Tamil posts averaged <strong style="color:var(--cyan)">3.1x more comments</strong> than equivalent English posts</li>
+          <li>Tamil posts had <strong style="color:var(--cyan)">2.4x more saves</strong></li>
+          <li>Tamil posts generated <strong style="color:var(--cyan)">67% more DMs</strong></li>
+          <li>English posts had <strong style="color:var(--cyan)">1.8x more shares</strong> (people sharing to non-Tamil connections)</li>
         </ul>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Step 2: Target the Right Keywords for Your Business</h3>
-        <p>Keyword research for a Kanchipuram business is different from keyword research for a national brand. You need to focus on <strong style="color:var(--cyan)">local commercial intent keywords</strong> — phrases people search when they're ready to buy locally.</p>
-        <p style="margin-top:14px">Here are the types of keywords to target:</p>
+        <h3>Why Tamil Content Wins for Conversions</h3>
+        <p>The reason is emotional connection. When a Kanchipuram silk saree shop posts in Tamil — "இந்த புடவை உங்கள் திருமணத்திற்கு பொருத்தமானது" — it speaks directly to the customer's heart. It signals: "we are one of you, we understand your culture." Trust increases, and with trust comes conversion.</p>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0">
-          <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:12px;padding:18px">
-            <div style="font-weight:800;color:var(--green);margin-bottom:8px">🟢 High Priority</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7">"silk saree shop kanchipuram"<br>"best dentist kanchipuram"<br>"AC repair near me kanchipuram"</div>
-          </div>
-          <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:18px">
-            <div style="font-weight:800;color:var(--gold);margin-bottom:8px">🟡 Medium Priority</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7">"digital marketing company kanchipuram"<br>"catering services kanchipuram"<br>"website design kanchipuram"</div>
-          </div>
-          <div style="background:rgba(56,189,248,0.06);border:1px solid var(--brd2);border-radius:12px;padding:18px">
-            <div style="font-weight:800;color:var(--cyan);margin-bottom:8px">🔵 Informational</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7">"how to buy silk saree"<br>"kanchipuram silk vs banarasi"<br>"wedding photography tips"</div>
-          </div>
+        <div class="art-box">
+          <h4>🔬 Content Performance by Industry</h4>
+          <ul class="art-list">
+            <li><strong>Silk sarees & textiles:</strong> Tamil content gets 4x engagement — highest impact of any sector</li>
+            <li><strong>Food & restaurants:</strong> Tamil gets 3.5x engagement — especially menu items and traditional recipes</li>
+            <li><strong>Healthcare:</strong> Bilingual performs best — Tamil for trust, English for credibility</li>
+            <li><strong>Real estate:</strong> Bilingual — Tamil for local buyers, English for NRI and corporate buyers</li>
+            <li><strong>Education:</strong> Tamil for parents, English for students — segment your audience</li>
+          </ul>
         </div>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Step 3: On-Page SEO — The Foundation of Rankings</h3>
-        <p>On-page SEO means optimizing the content on your website so Google understands what you do and who you serve. For a Kanchipuram business, these are the most important on-page elements:</p>
-        <ul style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
-          <li style="padding:14px 16px;background:var(--glass);border:1px solid var(--brd);border-radius:10px"><strong style="color:var(--text)">Title Tags:</strong> Include your main keyword + city. Example: <code style="background:rgba(56,189,248,0.1);padding:2px 8px;border-radius:6px;font-size:12px;color:var(--cyan)">Best Silk Sarees in Kanchipuram | [Your Shop Name]</code></li>
-          <li style="padding:14px 16px;background:var(--glass);border:1px solid var(--brd);border-radius:10px"><strong style="color:var(--text)">Meta Descriptions:</strong> Write a compelling 150-160 character description that includes your keyword and a call to action.</li>
-          <li style="padding:14px 16px;background:var(--glass);border:1px solid var(--brd);border-radius:10px"><strong style="color:var(--text)">H1 Heading:</strong> Every page should have exactly one H1 that includes your primary keyword naturally.</li>
-          <li style="padding:14px 16px;background:var(--glass);border:1px solid var(--brd);border-radius:10px"><strong style="color:var(--text)">URL Structure:</strong> Use clean, keyword-rich URLs like <code style="background:rgba(56,189,248,0.1);padding:2px 8px;border-radius:6px;font-size:12px;color:var(--cyan)">/silk-sarees-kanchipuram/</code></li>
-          <li style="padding:14px 16px;background:var(--glass);border:1px solid var(--brd);border-radius:10px"><strong style="color:var(--text)">Content Quality:</strong> Write at least 800 words of original, helpful content on each main service page. Thin content = poor rankings.</li>
-        </ul>
+        <h3>The Winning Formula: Bilingual Posts</h3>
+        <p>The highest performing post format we found: Tamil headline/caption first (emotional hook), then English translation below (for reach and searchability). Example post caption: "ஒவ்வொரு புடவையும் ஒரு கலைப்படைப்பு 🪡 | Every saree is a work of art. Handwoven by master weavers in Kanchipuram since 1952. DM to see our full 2025 collection." This approach works for every business type.</p>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Step 4: Build Local Citations and Backlinks</h3>
-        <p>Citations are online mentions of your business name, address, and phone number (NAP). Consistent citations across directories signal to Google that you're a legitimate local business.</p>
-        <p style="margin-top:14px">Key directories to list your Kanchipuram business on:</p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:14px 0">
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Justdial</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Sulekha</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">IndiaMART</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Yellow Pages India</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Bing Places</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Apple Maps Connect</span>
-          <span style="background:var(--glass);border:1px solid var(--brd);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--text2)">Facebook Business</span>
+        <h3>When English-First Makes Sense</h3>
+        <p>English should lead when: targeting NRI customers, running ads across Tamil Nadu (where multiple languages are spoken), writing about technical topics like digital marketing or financial services, or when your primary audience is young urban professionals who prefer English. Even then, adding a Tamil line at the end shows respect and cultural awareness.</p>
+
+        <div class="art-cta">
+          <h4>Want Bilingual Tamil/English Content for Your Business?</h4>
+          <p>We create social media content in both Tamil and English for businesses across Tamil Nadu. Native language quality, professional design, and results-focused strategy.</p>
+          <a href="https://wa.me/919585684616?text=I want bilingual Tamil and English social media content" class="btn-primary" target="_blank" rel="noopener">🚀 Start Bilingual Marketing →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══ ARTICLE: KPI GUIDE ═══ -->
+    <article id="post-kpi" class="full-article" style="display:none">
+      <div class="label" style="margin-bottom:20px"><span class="label-dot"></span>Business Guide</div>
+      <h2 class="art-h">The 7 Digital Marketing KPIs Every Tamil Nadu Business Owner Must Track</h2>
+      <div class="art-meta">
+        <span>👤 Vijayaraghavan G.</span><span>📅 Oct 2024</span><span>⏱ 8 min read</span><span>🏷️ Analytics · KPIs</span>
+      </div>
+      <div class="art-body">
+        <p class="art-lead">Most business owners either track too many metrics (and drown in data) or track none at all. These 7 KPIs are the only numbers that actually tell you whether your digital marketing is working or wasting money.</p>
+
+        <h3>KPI 1: Cost Per Lead (CPL)</h3>
+        <p>The most important number in paid advertising. Formula: <strong>Total ad spend ÷ number of leads = CPL.</strong> If you spent ₹10,000 and got 25 WhatsApp enquiries, your CPL is ₹400. Is that good? Depends on your industry. For a silk saree with average order value of ₹8,000, a ₹400 CPL is excellent. For a ₹200 product, it's a loss. Know your CPL and compare it monthly.</p>
+
+        <h3>KPI 2: Conversion Rate</h3>
+        <p>Of all the leads you receive, what percentage become paying customers? Formula: <strong>Customers ÷ Leads × 100.</strong> If you get 50 enquiries and convert 10 to sales, your conversion rate is 20%. Industry benchmarks vary widely. Track this monthly and work on improving it through better follow-up, pricing, and trust signals.</p>
+
+        <h3>KPI 3: Organic Search Traffic</h3>
+        <p>How many people find your website through Google without you paying for ads? This is your SEO performance metric. Track it in Google Analytics (free). A growing organic traffic number means your SEO is working. A declining number means something is wrong — algorithm update, competitor overtaking you, or technical issues. Check monthly.</p>
+
+        <div class="art-box">
+          <h4>📊 Benchmark KPIs for Tamil Nadu Businesses</h4>
+          <ul class="art-list">
+            <li><strong>Google Ads CTR:</strong> Aim for above 5% for local service ads</li>
+            <li><strong>Website Bounce Rate:</strong> Under 60% is good, under 40% is excellent</li>
+            <li><strong>Google Review Score:</strong> Maintain above 4.3 stars</li>
+            <li><strong>Email/WhatsApp Open Rate:</strong> Above 30% is industry-leading</li>
+            <li><strong>Social Media Engagement Rate:</strong> Above 3% on Instagram</li>
+          </ul>
         </div>
 
-        <h3 style="font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--text)">Step 5: Get More Google Reviews (The #1 Local Ranking Factor)</h3>
-        <p>Google reviews are the single most powerful local ranking factor. Businesses with more 4-5 star reviews consistently outrank competitors with better websites and more backlinks.</p>
-        <p style="margin-top:14px">Here's a simple system to get more reviews automatically:</p>
-        <ol style="padding-left:20px;display:flex;flex-direction:column;gap:10px;margin-top:12px">
-          <li>Send every satisfied customer a WhatsApp message 2 days after their visit with a direct link to your Google review page</li>
-          <li>Train your staff to ask for reviews verbally before customers leave</li>
-          <li>Add a QR code on your receipt/invoice that links to your review page</li>
-          <li>Respond to every review — this shows Google you're active and care about customers</li>
-        </ol>
+        <h3>KPI 4: Google Business Profile Actions</h3>
+        <p>Inside your Google Business Profile dashboard, you can see: calls, website clicks, direction requests, and message clicks — all from your Google listing. This free data is gold. If direction requests are low, your profile needs better photos and reviews. If calls are low, check if your phone number is correct and prominent.</p>
 
-        <div style="background:linear-gradient(135deg,rgba(56,189,248,0.1),rgba(129,140,248,0.06));border:1px solid var(--brd2);border-radius:16px;padding:28px;margin:32px 0;text-align:center">
-          <h4 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:900;margin-bottom:10px">Want Us to Do This for Your Business?</h4>
-          <p style="color:var(--muted);margin-bottom:20px;font-size:14px">We implement all 5 of these SEO steps for every client — usually within the first 30 days. Book a free consultation to see how we can grow your business.</p>
-          <a href="https://wa.me/919585684616?text=I read the SEO guide on your blog and want a free consultation" class="btn-primary" target="_blank" rel="noopener">🚀 Book Free Consultation →</a>
+        <h3>KPI 5: Return on Ad Spend (ROAS)</h3>
+        <p>For any paid advertising, ROAS tells you if it's profitable. Formula: <strong>Revenue from ads ÷ Ad spend.</strong> A 3x ROAS means every ₹1 spent on ads generates ₹3 in revenue. For most Tamil Nadu retail businesses, a 3-5x ROAS is healthy. Below 2x, the campaign needs optimization. Above 8x, scale it aggressively.</p>
+
+        <h3>KPI 6: Website Load Speed</h3>
+        <p>This is a technical KPI that directly impacts every other metric. Check it monthly at pagespeed.web.dev. Target: under 3 seconds on mobile. Every 1-second improvement in load time increases conversions by approximately 7%. If your site loads slowly, everything else you do is less effective.</p>
+
+        <h3>KPI 7: Customer Acquisition Cost (CAC)</h3>
+        <p>The total marketing cost to acquire one new customer — including all channels. Formula: <strong>Total marketing spend ÷ new customers acquired.</strong> If you spend ₹20,000/month and acquire 40 new customers, your CAC is ₹500. To know if this is sustainable, compare CAC to your Customer Lifetime Value (how much the average customer spends with you over their lifetime).</p>
+
+        <div class="art-cta">
+          <h4>Get a Monthly KPI Report for Your Business</h4>
+          <p>Every Digi Vijay client receives a monthly dashboard report covering all 7 of these KPIs — in plain language, no jargon. You always know exactly what your marketing investment is returning.</p>
+          <a href="https://wa.me/919585684616?text=I want to track digital marketing KPIs for my business" class="btn-primary" target="_blank" rel="noopener">🚀 Start Tracking Results →</a>
         </div>
+      </div>
+    </article>
 
-      </div><!-- /article content -->
-    </div>
   </div>
 </section>
+
 
 <!-- ══════════════════════════════════════
      FOOTER
@@ -477,7 +984,7 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="https://wa.me/919585684616" target="_blank">💬 WhatsApp: +91 95856 84616</a></li>
-          <li><a href="mailto:vijayaraghavang.2002@gmail.com">📧 Email Us</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#f98f90939880988b989e91988f98979ed7cbc9c9cbb99e94989095d79a9694">📧 Email Us</a></li>
           <li><a href="index.html">🏠 Back to Home</a></li>
         </ul>
       </div>
@@ -513,8 +1020,24 @@
     <input type="text" class="bot-input" placeholder="Ask anything..." autocomplete="off">
     <button class="bot-send">➤</button>
   </div>
+</d</div>
 </div>
 
 <script src="main.js"></script>
+<script>
+function showPost(id) {
+  document.getElementById('article-list').style.display = 'none';
+  document.querySelectorAll('.full-article').forEach(function(a){ a.style.display = 'none'; });
+  var el = document.getElementById(id);
+  if (el) { el.style.display = 'block'; }
+  document.getElementById('article-nav').style.display = 'block';
+  setTimeout(function(){ document.getElementById('articles').scrollIntoView({behavior:'smooth'}); }, 50);
+}
+function closePost() {
+  document.querySelectorAll('.full-article').forEach(function(a){ a.style.display = 'none'; });
+  document.getElementById('article-list').style.display = 'block';
+  document.getElementById('article-nav').style.display = 'none';
+}
+</script>
 </body>
 </html>
